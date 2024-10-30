@@ -13,8 +13,8 @@ require 'aluno.php';
 <body>
     <form action="gravar.php" method="post">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" value="<?= $nome ?>" autofocus>
-        <input type="hidden" name="matricula" value="<?= $matricula ?>">
+        <input type="text" name="nome" id="nome" value="" autofocus>
+        <input type="hidden" name="matricula" value="">
         <input type="submit" value="Gravar">
     </form>
 </body>

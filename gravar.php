@@ -8,6 +8,7 @@ $matricula = isset($_POST['matricula']) ? $_POST['matricula'] : null;
 if (!is_null($nome)) {
 
     $filename = __DIR__ . DS . 'alunos.txt';
+
     require 'arquivo.php';
 
     //abre no começo para leitura
@@ -15,7 +16,9 @@ if (!is_null($nome)) {
 
     //inclusão
     if (empty($matricula)) {
+
         $ultimaMatricula = 0;
+        
         while (! feof($handle)) {
             $record = explode(',', fread($handle, 80));
             $ultimaMatricula = (isset($record[0]) && empty($record[0])) ? $ultimaMatricula : $record[0];
@@ -43,6 +46,6 @@ if (!is_null($nome)) {
         unlink($filename);
         copy($tmpFilename, $filename);
     }
-    fclose($handle);
+    //fclose($handle);
 }
 header('Location: index.php');
