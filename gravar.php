@@ -43,4 +43,6 @@ if (!is_null($nome)) {
         unlink($filename);
         copy($tmpFilename, $filename);
     }
+    fclose($handle);
 }
+header('Location: index.php');
